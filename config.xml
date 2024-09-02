@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.devox.project.test" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Devox</name>
+    <description>in app browser with devox</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+       Yo, el rey de papus
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <access origin="https://devox.me" />
+    <allow-navigation href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="https://node_modules\bootstrap-icons\font\bootstrap-icons.min.css/*"/>
+    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="FadeSplashScreen" value="true"/>
+    <preference name="FadeSplashScreenDuration" value="2200"/>
+    <preference name="AndroidWindowSplashScreenBackground" value="#1d547c"/>
+     <preference name="AndroidGradlePluginVersion" value="8.4.0" />
+<platform name="android">
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="img/devox.png"/>
+    <icon src="img/icon.png"/>
+</platform>
+
+    
+</widget>

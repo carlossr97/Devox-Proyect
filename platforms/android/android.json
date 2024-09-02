@@ -1,0 +1,95 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"ExitApp\"><param name=\"android-package\" value=\"org.apache.cordova.exitapp.ExitApp\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "AndroidManifest.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-app-exit": {
+      "PACKAGE_NAME": "io.devox.project.test"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "io.devox.project.test"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "io.devox.project.test"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-app-exit.exitApp",
+      "file": "plugins/cordova-plugin-app-exit/www/ExitApp.js",
+      "pluginId": "cordova-plugin-app-exit",
+      "merges": [
+        "navigator.app"
+      ]
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
+      ]
+    },
+    {
+      "id": "cordova-plugin-network-information.network",
+      "file": "plugins/cordova-plugin-network-information/www/network.js",
+      "pluginId": "cordova-plugin-network-information",
+      "clobbers": [
+        "navigator.connection"
+      ]
+    },
+    {
+      "id": "cordova-plugin-network-information.Connection",
+      "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+      "pluginId": "cordova-plugin-network-information",
+      "clobbers": [
+        "Connection"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-app-exit": "0.0.1",
+    "cordova-plugin-inappbrowser": "5.0.0",
+    "cordova-plugin-network-information": "3.0.0"
+  }
+}

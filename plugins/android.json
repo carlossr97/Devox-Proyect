@@ -1,0 +1,21 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-app-exit": {
+      "PACKAGE_NAME": "io.devox.project.test"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "io.devox.project.test"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "io.devox.project.test"
+    }
+  },
+  "dependent_plugins": {}
+}
