@@ -19,6 +19,9 @@
     <preference name="AndroidWindowSplashScreenBackground" value="#1d547c"/>
      <preference name="AndroidGradlePluginVersion" value="8.4.0" />
 <platform name="android">
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
     <preference name="AndroidWindowSplashScreenAnimatedIcon" value="img/devox.png"/>
     <icon src="img/icon.png"/>
 </platform>

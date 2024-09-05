@@ -24,10 +24,14 @@ document.addEventListener('deviceready', onDeviceReady, false);
 var networkState = "";
 var states = {};
 var inAppBrowserRef;
-var URLlogin = "https://afhc-desa.hospitalaleman.com";
+var URLlogin = "https://devox.me";
 var exit = false;
 var open = false;
 
+var close;
+var closeLoop;
+var cordova = window.cordova;
+var window;
 function onDeviceReady() {
 	showBrowser();
 	document.addEventListener("online", show, false);
@@ -36,7 +40,52 @@ function onDeviceReady() {
 	inAppBrowserRef.addEventListener('loadstart',
 	function(event){
 		console.log("Load START in  device ready: ",event.url);
+		 const url = event.url;
+		// const subString = url.substring(12,20);
+		if(url !== 'https://devox.me/') {
+			console.log("url !== 'https://devox.me/'):   ",url);
+			window.plugins.socialsharing.share('Hola querido grupo de #LaArgentinaTeCoje, les comparto este devox: ', null, null, url);
+		}
 	});
+
+	inAppBrowserRef.addEventListener('loadstop',
+		function(event){
+			
+			inAppBrowserRef.executeScript({
+				code: `
+					(function() {
+					var shareButton = document.createElement('button');
+					shareButton.innerHTML = 'SHARE';
+					shareButton.style.position = 'fixed';
+					shareButton.style.bottom = '46px';
+					shareButton.style.right = '33px';
+					shareButton.style.zIndex = '1000';
+					shareButton.style.color = 'black';
+					shareButton.style.borderRadius = '20px';
+					shareButton.style.backgroundColor = '#6afba0';
+					document.body.appendChild(shareButton);
+	
+					  shareButton.addEventListener('click', function() {
+                        var url = window.location.href;
+                        window.location.href = url;
+                    });
+                })();
+				      `
+        });
+
+		});
+
+		
+
+			// window.handleOpenURL = function(url) {
+			// 	console.log("window.handleOpenURLLLLLL  ",url);
+			// 	var urlParams = new URLSearchParams(url.split('?')[1]);
+			// 	var shareUrl = urlParams.get('url');
+			// 	if (shareUrl) {
+			// 		cordova.plugins.socialsharing.share('Check out this page', null, null, shareUrl);
+			// 	}
+			// };
+	
 
 	document.addEventListener("backbutton", function (e) {
 		console.log("BACKBUTTON////// index.js");

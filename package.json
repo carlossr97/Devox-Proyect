@@ -16,7 +16,9 @@
     "cordova-android": "^13.0.0",
     "cordova-plugin-app-exit": "^0.0.2",
     "cordova-plugin-inappbrowser": "^5.0.0",
-    "cordova-plugin-network-information": "^3.0.0"
+    "cordova-plugin-network-information": "^3.0.0",
+    "cordova-plugin-x-socialsharing": "^6.0.4",
+    "es6-promise-plugin": "^4.2.2"
   },
   "cordova": {
     "platforms": [
@@ -25,7 +27,8 @@
     "plugins": {
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-network-information": {},
-      "cordova-plugin-app-exit": {}
+      "cordova-plugin-app-exit": {},
+      "cordova-plugin-x-socialsharing": {}
     }
   },
   "dependencies": {
